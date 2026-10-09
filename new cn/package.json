@@ -1,0 +1,24 @@
+{
+  "name": "netwatch",
+  "version": "1.0.0",
+  "description": "NetWatch \u2014 Real-Time Network Monitoring & Performance Analysis NOC System (BTech CSE CN)",
+  "type": "module",
+  "scripts": {
+    "dev": "node start-dev.js",
+    "server": "npm --prefix server run dev",
+    "client": "npm --prefix client run dev",
+    "build": "npm --prefix client run build",
+    "install:all": "npm --prefix server install && npm --prefix client install"
+  },
+  "keywords": [
+    "network-monitoring",
+    "noc",
+    "computer-networks",
+    "latency",
+    "topology",
+    "icmp",
+    "packet-loss"
+  ],
+  "author": "Anand Jha",
+  "license": "MIT"
+}

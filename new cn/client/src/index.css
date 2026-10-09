@@ -1,0 +1,106 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-main: #080D18;
+    --bg-panel: #101827;
+    --bg-card: #151F32;
+    --border-color: #1E293B;
+    --cyan: #35D9FF;
+    --violet: #9875FF;
+    --success: #36D399;
+    --warning: #FFBD59;
+    --error: #FF647C;
+    --text-primary: #F1F5F9;
+    --text-secondary: #94A3B8;
+    --text-muted: #64748B;
+  }
+
+  * {
+    box-sizing: border-box;
+    border-color: #1E293B;
+  }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #080D18;
+    color: #F1F5F9;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', Oxygen, Ubuntu, Cantarell, sans-serif;
+    overflow-x: hidden;
+    min-height: 100vh;
+    width: 100%;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  #root {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #080D18;
+  }
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #080D18;
+}
+::-webkit-scrollbar-thumb {
+  background: #1E293B;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+
+/* NOC Grid & Glow Utilities */
+.noc-grid-bg {
+  background-image: 
+    radial-gradient(rgba(53, 217, 255, 0.04) 1px, transparent 1px),
+    radial-gradient(rgba(152, 117, 255, 0.03) 1px, transparent 1px);
+  background-size: 32px 32px;
+  background-position: 0 0, 16px 16px;
+}
+
+.noc-panel {
+  background: #101827;
+  border: 1px solid #1E293B;
+  border-radius: 0.75rem;
+}
+
+.noc-panel-hover {
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.noc-panel-hover:hover {
+  border-color: rgba(53, 217, 255, 0.3);
+  box-shadow: 0 4px 20px -2px rgba(53, 217, 255, 0.05);
+}
+
+.glow-cyan {
+  box-shadow: 0 0 15px -2px rgba(53, 217, 255, 0.35);
+}
+.glow-success {
+  box-shadow: 0 0 15px -2px rgba(54, 211, 153, 0.35);
+}
+.glow-error {
+  box-shadow: 0 0 15px -2px rgba(255, 100, 124, 0.35);
+}
+.glow-warning {
+  box-shadow: 0 0 15px -2px rgba(255, 189, 89, 0.35);
+}
+
+/* Pulsing radar dot */
+@keyframes radar-pulse {
+  0% { transform: scale(0.95); opacity: 0.8; }
+  50% { transform: scale(1.15); opacity: 1; }
+  100% { transform: scale(0.95); opacity: 0.8; }
+}
+
+.animate-radar {
+  animation: radar-pulse 2s infinite ease-in-out;
+}
